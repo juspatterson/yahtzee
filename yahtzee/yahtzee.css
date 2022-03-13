@@ -1,0 +1,347 @@
+﻿/*colour elements for dark mode*/
+@media (prefers-color-scheme: dark) {
+    body {
+        padding: 0;
+        margin-top: 40px;
+        color: rgb(252, 255, 234);
+        background-color: #1F2022;
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    header {
+        background-color: rgba(26, 26, 26, 0.9);
+    }
+
+}
+/*colour elements for light mode*/
+@media (prefers-color-scheme: light) {
+    body {
+        padding: 0;
+        margin-top: 40px;
+        color: #1F2022;
+        background-color: white;
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    header {
+        background-color: rgba(106, 106, 106, 0.9);
+    }
+
+}
+
+/*format <h1> */
+h1 {
+    font-size: 70px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/*positioning for header*/
+header {
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+/*flexible layout for header*/
+.page-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+
+/*animation for dice in header*/
+.header-dice {
+    margin: 15px;
+    animation: rotate 3s infinite;
+    transform: rotate(30deg);
+
+}
+
+/*animation for dice in header*/
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*make dice in header have round corners*/
+.header-dice img {
+    border-radius: 20%;
+}
+
+/*flexible layout for footer container*/
+.footer-container {
+    display: flex;
+    margin-top: 1%;
+}
+
+/*layout for validation image */
+.validation-image {
+    height: fit-content;
+    width: fit-content;
+    align-self: center;
+    padding:5px;
+}
+
+/*layout for validation- mages */
+.validation-images-container {
+    display: grid;
+    grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+    width: max-content;
+    margin: 0 auto;
+}
+
+
+/*hide default checkbox*/
+.container-for-checkbox input {
+    position: absolute;
+    opacity: 0.00001;
+    cursor: pointer;
+    height: 152px;
+    width: 152px;
+}
+
+/* format size for checkbox */
+.container-for-checkbox {
+    margin: 0 15px;
+}
+
+
+/*format and layout for custom checkbox with blank dice  */
+.checkmark {
+    display: inline-block;
+    top: 0;
+    left: 0;
+    height: 152px;
+    width: 152px;
+    border-radius: 10%;
+    background-image: url("images/0.png");
+    background-repeat:no-repeat;
+    transition-duration: 0.4s;
+}
+
+/*format for custom checkbox when checked*/
+.container-for-checkbox input:checked ~ .checkmark {
+    width: 152px;
+    height: 152px;
+    box-shadow: 0 0 15px chartreuse;
+}
+
+/*format for custom checkbox when checked*/
+.container-for-checkbox input:checked ~ .checkmark:after {
+    content: "";
+    display: block;
+    position: relative;
+    margin-left: 28%;
+}
+
+/*flexible layout for dice */
+.dice-container{
+    margin-top: 100px;
+    display: inline-flex;
+}
+
+/*format for button */
+.button {
+    border-radius: 10px;
+    padding-left: 5px;
+    border: none;
+    background-image:
+            linear-gradient(to bottom,rgba(147, 205, 130, 100), rgb(23, 93, 16));
+    background-repeat:no-repeat;
+    text-align: center;
+    font-size: 29px;
+    transition-duration: 0.4s;
+}
+
+/*format for button:hover */
+.button:hover {
+    color: white ;
+    border-radius: 10px;
+    background-color: black;
+    text-align: center;
+    font-size: 29px;
+    transition-duration: 0.4s;
+}
+
+/*format for roll dice button container */
+.roll-dice-button-container {
+    margin: 10px 0;
+}
+
+/*format for roll dice button container p */
+.roll-dice-button-container p {
+    margin: 0;
+}
+
+/*format for score table container */
+.score-table-container {
+    display: flex;
+}
+
+/*format for score table */
+.score-table {
+    flex: 50%;
+}
+
+/*format for table */
+table {
+    width: 100%;
+}
+
+/*format for score table th*/
+.score-table th {
+    text-align: left;
+    border: 1px solid rgb(23, 93, 16);
+    padding: 6px 1px ;
+}
+
+/*format for score table td */
+.score-table td {
+    border: 1px solid rgb(23, 93, 16);
+    padding: 0;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/*align text for the 4 column to the right*/
+.score-table td:nth-child(4) {
+    text-align: right;
+}
+
+/*align text for total for upper table and total for lower table to the right*/
+#total-for-upper-table, #total-for-lower-table {
+    text-align: right;
+}
+
+/* add margin to p tags in tables */
+.score-table p, .total-table p {
+    margin: 4px;
+}
+
+/*layout for score tables */
+.score-table table {
+    margin: 2px;
+    border-collapse: separate;
+}
+
+/*layout for total tables */
+.total-table {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*style for total tables */
+.total-table th {
+    border: 1px solid rgb(23, 93, 16);
+    padding: 2px 10px;
+}
+
+/*format for submit button:hover */
+.submit-button {
+    border-radius: 8px;
+    height: 25px;
+    border: none;
+    background-image: linear-gradient(to bottom,rgba(147, 205, 130, 100), rgb(23, 93, 16));
+    background-repeat:no-repeat;
+    text-align: center;
+    font-size: 12px;
+    transition-duration: 0.4s;
+}
+
+/*format for submit button:hover */
+.submit-button:hover {
+    color: white ;
+    border-radius: 8px;
+    background-color: black;
+    text-align: center;
+    font-size: 12px;
+    transition-duration: 0.4s;
+}
+
+/*animation for submit button when clicked */
+.submit-button:active, .button:active {
+    background-image: linear-gradient(to bottom,rgb(23, 93, 16),rgba(147, 205, 130, 100));
+    transition-duration: 0.4s;
+}
+
+/*style for when submit button is disabled */
+.submit-button:disabled {
+    background-image: linear-gradient(to bottom, rgb(92, 98, 92), rgb(47, 50, 47));
+}
+
+/*preload image*/
+#preload-01 {
+    background: url("images/1.png") no-repeat -9999px -9999px;;
+}
+
+/*preload image*/
+#preload-02 {
+    background: url("images/2.png") no-repeat -9999px -9999px;;
+}
+
+/*preload image*/
+#preload-03 {
+    background: url("images/3.png") no-repeat -9999px -9999px;;
+}
+
+/*preload image*/
+#preload-04 {
+    background: url("images/4.png") no-repeat -9999px -9999px;;
+}
+
+/*preload image*/
+#preload-05 {
+    background: url("images/5.png") no-repeat -9999px -9999px;;
+}
+
+/*preload image*/
+#preload-06 {
+    background: url("images/6.png") no-repeat -9999px -9999px;;
+}
+
+.hide-cell {
+    display: none;
+}
+/*animation for dice */
+.shake-dice {
+    animation: shake .5s ease-in-out;
+}
+
+/*animation for dice */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-10px);
+    }
+
+    40% {
+        transform: translateX(10px);
+    }
+
+    60% {
+        transform: translateX(-10px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
